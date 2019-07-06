@@ -9,6 +9,8 @@ class Language(models.Model):
 
 class Doctor(models.Model):
 	name=models.CharField(max_length=50, verbose_name="Name")
+	username=models.CharField(max_length=50, verbose_name="Username")
+	password=models.CharField(max_length=20,verbose_name="Password")
 	age=models.IntegerField(validators=[MaxValueValidator(100)],verbose_name="Age")
 	aadharNumber=models.IntegerField(validators=[MaxValueValidator(999999999999)],verbose_name="Aadhar Number")
 	email=models.EmailField(blank=False, max_length=60, verbose_name="Email Address")
@@ -23,6 +25,8 @@ class Doctor(models.Model):
 		return self.name
 class Patient(models.Model):
 	name=models.CharField(max_length=50, verbose_name="Name")
+	username=models.CharField(max_length=50, verbose_name="Username")
+	password=models.CharField(max_length=20,verbose_name="Password")
 	age=models.IntegerField(validators=[MaxValueValidator(100)],verbose_name="Age")
 	aadharNumber=models.IntegerField(validators=[MaxValueValidator(999999999999)],verbose_name="Aadhar Number")
 	email=models.EmailField(blank=False, max_length=60, verbose_name="Email Address")
